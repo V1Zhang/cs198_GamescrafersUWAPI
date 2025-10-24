@@ -523,6 +523,32 @@ def get_connect4(variant_id):
         return get_theme(7)
     return None
 
+def get_connect4twistandturn(variant_id):
+    def get_theme(cols):
+        centers = [[0.5 + i // 6, 1.5 + i % 6] for i in range(cols * 6)]
+        return {
+            "defaultTheme": "normal",
+            "themes": {
+                "normal": {
+                    "space": [cols, 6],
+                    "centers": centers + [[i % cols + 0.5, i // cols] for i in range(cols * 2)],
+                    "foreground": f"connect4/foreground6x{cols}.svg",
+                    "charImages": {
+                        "X": {"image": "general/blue_circle.svg", "scale": 1},
+                        "O": {"image": "general/red_circle.svg", "scale": 1},
+                    },
+                    "arrowWidth": 0.13,
+                    "sounds": {"x": "general/remove.mp3"},
+                    "animationType": "entityFade"
+                }
+            }
+        }
+    if variant_id == "4x5":
+        return get_theme(5)
+    elif variant_id == "5x6":
+        return get_theme(6)
+    return None
+
 def get_dao(variant_id):
     return {
         "defaultTheme": "basic",
@@ -2526,6 +2552,7 @@ image_autogui_data_funcs = {
     "chopsticks": get_chopsticks,
     "clocksolitaire": get_clock_solitaire,
     "connect4": get_connect4,
+    "connect4twistandturn": get_connect4twistandturn,
     "chungtoi": get_chungtoi,
     "dao": get_dao,
     "dawsonschess": get_dawsonschess,
