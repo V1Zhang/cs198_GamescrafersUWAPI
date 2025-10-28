@@ -322,21 +322,15 @@ games = {
         },
         gui='v3'),
     
-    'connect4twistandturn': Game(
+    'connect4twist': Game(
         name='Connect 4 Twist and Turn',
         variants={
             '4*5': Variant(
                 name='4*5',
                 data_provider=GamesmanClassic,
-                data_provider_game_id='connect4twistandturn',
-                data_provider_variant_id=1,
+                data_provider_game_id='connect4twist',
+                data_provider_variant_id=0,
                 gui='v3'),
-            '5*6': Variant(
-                name='5*6',
-                data_provider=GamesmanClassic,
-                data_provider_game_id='connect4twistandturn',
-                data_provider_variant_id=2,
-                gui='v3')
         },
         gui='v3'),
 
