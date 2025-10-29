@@ -525,17 +525,17 @@ def get_connect4(variant_id):
 
 def get_connect4twist(variant_id):
     def get_theme(cols):
-        centers = [[3.5 - i % 4, 0.5 + i // 4] for i in range(cols * 4)]
+        centers = [[0.8 + (i % 4) * 0.8, 1.2 + (i // 4) * 0.8] for i in range(cols * 4)]
         return {
             "defaultTheme": "normal",
             "themes": {
                 "normal": {
                     "space": [cols, 4],
-                    "centers": centers + [[i % cols, i // cols] for i in range(cols * 2)],
+                    "centers": centers + [[0.8 + (i % 4) * 0.8, (i // 4) * 0.75] for i in range(cols * 2)],
                     "foreground": f"connect4/foreground4x{cols}.svg",
                     "charImages": {
-                        "x": {"image": "general/blue_circle.svg", "scale": 0.5},
-                        "o": {"image": "general/red_circle.svg", "scale": 0.5},
+                        "x": {"image": "general/blue_circle.svg", "scale": 0.85},
+                        "o": {"image": "general/red_circle.svg", "scale": 0.85},
                         "l": {"image": "connect4twist/left.svg", "scale": 0.5},
                         "r": {"image": "connect4twist/right.svg", "scale": 0.5}
                     },
