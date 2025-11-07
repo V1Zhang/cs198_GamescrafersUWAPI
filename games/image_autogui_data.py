@@ -547,6 +547,8 @@ def get_connect4twist(variant_id):
         }
     if variant_id == "4x4":
         return get_theme(4)
+    elif variant_id == "4x5":
+        return get_theme(5)
     return None
 
 def get_dao(variant_id):

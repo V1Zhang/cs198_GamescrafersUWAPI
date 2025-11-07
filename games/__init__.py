@@ -331,6 +331,13 @@ games = {
                 data_provider_game_id='connect4twist',
                 data_provider_variant_id=0,
                 gui='v3'),
+            '4x5': Variant(
+                name='4x5',
+                data_provider=GamesmanClassic,
+                data_provider_game_id='connect4twist',
+                data_provider_variant_id=1,
+                gui='v3'),
+
         },
         gui='v3'),
 
